@@ -1,0 +1,37 @@
+% LTeX: language=es
+
+\documentclass{article}
+\usepackage{geometry}
+\usepackage{graphicx}
+\usepackage[spanish]{babel}
+\usepackage[T1]{fontenc}
+\usepackage{csquotes}
+\usepackage[style=apa, backend=biber]{biblatex}
+
+\addbibresource{./src/main.bib}
+
+\graphicspath{ {./res/} }
+
+\begin{document}
+
+\include{titlepage}
+
+\tableofcontents
+
+\cleardoublepage{}
+
+\section{Introducción}
+TODO
+
+\section{Algoritmos}
+TODO \autocite{foead} \autocite{tongpan} \autocite{javaid} \autocite{mehta}
+
+\section{Criterio de selección}
+TODO
+
+\section{Conclusiones}
+TODO
+
+\printbibliography{}
+
+\end{document}

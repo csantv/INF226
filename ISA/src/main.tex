@@ -21,16 +21,56 @@
 \cleardoublepage{}
 
 \section{Introducción}
-TODO
+En este documento se describirán algoritmos de búsqueda del camino más corto entre
+dos puntos en un mapa o grafo. Adicionalmente, se contrastarán los beneficios y
+limitaciones de cada algoritmo y la factibilidad de la implementación para este
+proyecto del curso Desarrollo de Programas I. Finalmente, un algoritmo será
+seleccionado a partir de los criterios previamente desarrollados.
 
 \section{Algoritmos}
-TODO \autocite{foead} \autocite{tongpan} \autocite{javaid} \autocite{mehta}
+\subsection{Dijkstra}
+El algoritmo de Dijkstra fue creado por E.W. Dijkstra. La idea principal de este
+algoritmo es adoptar la estrategia algorítmica codiciosa para la mejor opción y
+viajar al vértice adyacente con el menor peso acumulado y que no haya sido visitado
+anteriormente iniciando del vértice inicial \autocite{tongpan}.
 
-\section{Criterio de selección}
-TODO
+\subsection{Best First Search}
+La idea principal del algoritmo BFS es utilizar una función heurística para elegir
+el siguiente vértice a recorrer. Esta función heurística se define como la distancia
+del vértice hasta el vértice objetivo \autocite{mehta}.
+
+\subsection{A*}
+El algoritmo A* combina dos criterios para la selección del siguiente vértice. Este
+algoritmo mide el peso de cada vértice respecto al origen, también toma en cuenta
+una función heurística para medir la distancia entre un vértice y el vértice objetivo.
+
+\section{Comparacion}
+El algoritmo de Dijkstra encuentra el camino más corto desde un punto inicial hasta
+un objetivo sin falla \autocite{minhang}. El problema de este algoritmo es que siempre
+va a tener que tomar en cuenta todos los vértices vecinos durante el recorrido
+hasta llegar al destino.
+
+El algoritmo BFS es más rápido que el algoritmo de Dijkstra, ya que ahorra recursos
+utilizando la función heurística. Sin embargo, el camino seleccionado por este
+algoritmo no necesariamente va a ser el más corto si es que la función heurística
+no fue definida correctamente.
+
+El algoritmo A* ha sido método más probado y utilizado como base para problemas
+de búsqueda de caminos \autocite{foead}. El algoritmo combina la habilidad del
+algoritmo de Dijkstra de siempre encontrar el camino más corto, y utiliza una
+función heurística como el algoritmo BFS. El algoritmo A* combina todos los
+beneficios del algoritmo Dijkstra y BFS sin padecer de los inconvenientes
+de estos \autocite{mehta}.
 
 \section{Conclusiones}
-TODO
+Cuando la topología de rutas es relativamente pequeña, los algoritmos A*, Dijkstra
+y BFS el tiempo de ejecución es casi igual \autocite{minhang}. Cuando comienzan
+a aumentar la cantidad de nodos que se deben de viajar entonces el algoritmo A*
+tiene el tiempo de ejecución mayor.
+
+Particularmente, en el proyecto que se va a desarrollar en el curso de Desarrollo
+de Programas I, la cantidad de nodos que se van a tener que atravesar será alto
+por lo que se decidió utilizar el algoritmo A* para el desarrollo de este proyecto.
 
 \printbibliography{}
 
